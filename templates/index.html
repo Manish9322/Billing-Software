@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILLING SOFTWARE</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- <script src="/static/js/index.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section id="output" class="output">
+
+        <div class="part">
+            <h1>REVENUE</h1>
+            <h1>{{ total_revenue }}</h1>
+
+            Revenue refers to the total income a company generates from its business activities, such as
+            selling goods
+            or providing services, over a specific period. It is often called <b>"top-line"</b> income because it is the
+            first
+            item on an income statement, representing gross earnings before any expenses are deducted.
+
+        </div>
+
+        <div class="part">
+            <h1>SALES</h1>
+            <h1>{{ total_sales }}</h1>
+
+            Sales represent the <b> monetary value </b> of goods or services a company sells to its customers. It
+            focuses
+            specifically on transactions where customers purchase products or services. Sales are a subset of revenue
+            and are typically recorded as net sales after deductions like discounts, returns, and allowances.
+
+    </section>
+
+    <section>
+
+        <div class="part">
+
+            <h2>PRODUCT DETAILS</h2>
+            <!-- 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quam quas obcaecati repellat neque!
+            Quibusdam, quia, nobis maxime vel earum aliquam velit dolores voluptas quos consequatur eos excepturi labore
+            adipisci cumque sit nesciunt. Error cumque enim eum sit voluptatibus mollitia labore quaerat voluptate?
+            Error, aperiam facere harum ipsam quia provident. -->
+
+            <div class="table-container">
+                <table id="dataTable" class="scrollable-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>TYPE</th>
+                            <th>PRICE</th>
+                            <th>QUANTITY</th>
+                            <th>MANUFACTURER</th>
+                            <th>STOCK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.type }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.quantity }}</td>
+                            <td>{{ product.manufacturer }}</td>
+                            <td>{{ product.stock }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="search">
+                <form action="/" method="POST">
+                    <label for="product-search-column"><b>SEARCH BY :</b> </label>
+                    <select name="product-search-column" class="s-list" id="product-search-column" required>
+                        <option value="id">ID</option>
+                        <option value="name">NAME</option>
+                        <option value="type">TYPE</option>
+                        <option value="price">PRICE</option>
+                        <option value="quantity">QUANTITY</option>
+                        <option value="manufacturer">MANUFACTURER</option>
+                        <option value="stock">STOCK</option>
+                    </select>
+                    <input type="text" name="product-searchbar" id="product-searchbar" placeholder="ENTER SEARCH VALUE"
+                        required>
+                    <button type="submit">SEARCH</button>
+                </form>
+            </div>
+
+
+            <!-- </div>
+
+        <div class="part"> -->
+
+            <h2 style="padding: 1rem 0 0 0;">CUSTOMER DETAILS</h2>
+
+            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus inventore, voluptatum nesciunt quas non
+            perferendis. Amet reprehenderit veniam blanditiis, atque, modi, aliquid praesentium velit odit consequatur
+            possimus qui officiis asperiores accusamus quaerat delectus magni deleniti in consequuntur esse non facilis
+            fugit. Id consequatur corrupti corporis voluptas velit nostrum, nulla illo!
+         -->
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>GENDER</th>
+                            <th>CONTACT</th>
+                            <th>GMAIL</th>
+                            <th>ADDRESS</th>
+                            <th>PINOCDE</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in customers %}
+                        <tr>
+                            <td>{{ customer.id }}</td>
+                            <td>{{ customer.name }}</td>
+                            <td>{{ customer.gender }}</td>
+                            <td>{{ customer.contact }}</td>
+                            <td>{{ customer.email }}</td>
+                            <td>{{ customer.address }}</td>
+                            <td>{{ customer.pincode }}</td>
+
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="search">
+                <form action="/" method="POST">
+                    <label for="customer-search-column"><b>SEARCH BY :</b></label>
+                    <select name="customer-search-column" class="s-list" id="customer-search-column" required>
+                        <option value="id">ID</option>
+                        <option value="name">NAME</option>
+                        <option value="gender">GENDER</option>
+                        <option value="contact">CONTACT</option>
+                        <option value="email">EMAIL</option>
+                        <option value="address">ADDRESS</option>
+                        <option value="pincode">PINCODE</option>
+                    </select>
+                    <input type="text" name="customer-searchbar" id="customer-searchbar"
+                        placeholder="ENTER SEARCH VALUE" required>
+                    <button type="submit">SEARCH</button>
+                </form>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <script>
+        // Clear search fields on page load
+        window.onload = function () {
+            document.getElementById('product-searchbar').value = '';
+            document.getElementById('customer-searchbar').value = '';
+        };
+
+    </script>
+
+
+    <section id="input">
+
+        <div class="product-input part">
+
+            <h2>PRODUCT DETAILS FORM</h2>
+            <!-- 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quas nam quod nostrum iusto quos aut
+            voluptatum eius asperiores accusamus. Porro accusamus sequi aliquam nam animi voluptates tempore ut id natus
+            sunt fugiat consectetur repellat fuga, nobis reprehenderit laborum laudantium recusandae hic? Tenetur, iste
+            doloribus cumque sunt saepe nihil quia recusandae illum dolorem, deserunt perspiciatis debitis, dolore
+            dignissimos nisi tempora dolores at animi necessitatibus quibusdam explicabo neque? Ad, quidem reiciendis! -->
+
+            <form action="/" method="POST" class="form-input" id="form">
+
+                <label for="name">PRODUCT NAME</label>
+                <label for="type">PRODUCT TYPE</label>
+                <label for="price">PRODUCT PRICE</label>
+
+                <input type="text" name="name" id="name" required>
+                <select name="type" id="type" required>
+                    {% for type in product_types %}
+                    <option value="{{ type['id'] }}">{{ type['type_name'] }}</option>
+                    {% endfor %}
+                </select>
+                <input type="number" step="0.01" max="1000000" min="1" name="price" id="price" required
+                    placeholder="PRICE PER PRODUCT">
+
+                <label for="quantity">PRODUCT QUANTITY</label>
+                <label for="manufacturer">PRODUCT MANUFACTURER</label>
+                <label for="stock">OLD STOCK</label>
+
+                <input type="number" max="100" min="1" name="quantity" id="quantity" required>
+                <input type="text" name="manufacturer" id="manufacturer">
+                <input type="number" name="stock" id="stock" min="0" max="100">
+
+                <div class="button-div">
+                    <button type="submit" name="product-submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <section id="data-forms">
+
+        <div class="customer-input part">
+
+            <h2>CUSTOMER DETAILS FORM</h2>
+
+            <form action="/" method="POST" class="form-input" id="form">
+                <!-- Row 1 -->
+                <label for="cname">CUSTOMER NAME</label>
+                <label for="gender">GENDER</label>
+                <label for="contact">CONTACT</label>
+
+                <input type="text" name="cname" id="cname" required>
+                <select name="gender" id="gender" required>
+                    <option value="male">MALE</option>
+                    <option value="female">FEMALE</option>
+                    <option value="other">OTHER</option>
+                </select>
+                <input type="text" name="contact" id="contact" required>
+
+
+                <!-- Row 2 -->
+                <label for="email">GMAIL</label>
+                <label for="address">ADDRESS LOCATION</label>
+                <label for="stock">PINCODE</label>
+
+                <input type="email" name="email" id="email" required>
+                <input type="text" name="address" id="address">
+                <input type="text" name="pincode" id="pincode">
+
+                <div class="button-div">
+                    <button type="submit" name="customer-submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <section id="bill" class="bill">
+
+        <div class="part">
+            <h2>GENERATE BILL</h2>
+
+            <div class="cname-div">
+                <h3>CUSTOMER NAME : </h3>
+                <select class="d-list" name="cname" id="d-list">
+                    <option value="" disabled selected>SELECT CUSTOMER</option>
+                    {% for customer in customers %}
+                    <option value="{{ customer['id'] }}">{{ customer['name'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="table-container">
+                <form method="post">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>PRODUCTS</th>
+                                <th>QUANTITY</th>
+                                <th>PRICE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in products %}
+                            <tr>
+                                <td>
+                                    <input type="text" value="{{ product['name'] }}" name="product"
+                                        id="product-{{ product['name'] }}" readonly>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantity" id="quantity-{{ product['name'] }}" min="0"
+                                        value="0"
+                                        oninput="safeUpdatePrice('{{ product['name'] }}', {{ product['price'] }})">
+                                </td>
+                                <td>
+                                    <input type="text" name="price" id="price-{{ product['name'] }}" value="0.00"
+                                        readonly>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="part">
+            <h2>BILL PAYMENT</h2>
+
+            <div class="cname-div">
+                <h3>CUSTOMER NAME : </h3>
+                <input class="d-list" type="text" name="cust-name" id="cust-name" placeholder="CUSTOMER NAME" readonly>
+            </div>
+
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>PRODUCTS</th>
+                            <th>QUANTITY</th>
+                            <th>PRICE</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+
+            <div class="receipt">
+                <!-- THE NEW PRODUCT-STRIPS WILL BE ADDED HERE  -->
+            </div>
+
+            <div class="bill-data">
+                <div class="total-price">
+                    <label for="total-price">TOTAL : </label>
+                    <input style="width: 200px;" type="text" id="total-price" name="totalPrice" value="0.00" readonly>
+                </div>
+
+                <div class="total-price">
+                    <label for="total-quantity">TOTAL QUANTITY : </label>
+                    <input style="width: 200px;" type="text" id="total-quantity" name="totalQuantity" value="0"
+                        readonly>
+                </div>
+
+            </div>
+
+            <form method="post" action="/pay" onsubmit="syncTotalValues()">
+                <input type="hidden" id="hidden-total-price" name="totalPrice">
+                <input type="hidden" id="hidden-total-quantity" name="totalQuantity">
+                <button class="pay" type="submit">PAY</button>
+            </form>
+
+        </div>
+
+        <script>
+
+            const dropdown = document.getElementById('d-list');
+            const inputField = document.getElementById('cust-name');
+
+            dropdown.addEventListener('change', function () {
+                const selectedCustomerName = dropdown.options[dropdown.selectedIndex].text;
+
+                inputField.value = selectedCustomerName;
+            });
+
+            function updatePrice(productName, pricePerUnit) {
+                const quantityInput = document.getElementById(`quantity-${productName}`);
+                const priceInput = document.getElementById(`price-${productName}`);
+                const totalPriceInput = document.getElementById('total-price');
+                const receiptContainer = document.querySelector('.receipt');
+
+                const quantity = parseInt(quantityInput.value, 10) || 0;
+                const productPrice = (quantity * pricePerUnit).toFixed(2);
+
+                priceInput.value = productPrice;
+
+                let existingProductStrip = document.querySelector(`#receipt-product-${CSS.escape(productName)}`);
+
+                if (quantity > 0) {
+                    if (existingProductStrip) {
+
+                        const quantityField = existingProductStrip.querySelector('.quantity');
+                        const priceField = existingProductStrip.querySelector('.price');
+                        quantityField.value = quantity;
+                        priceField.value = productPrice;
+                    } else {
+
+                        const productStrip = document.createElement('div');
+                        productStrip.classList.add('product-strip');
+                        productStrip.id = `receipt-product-${productName}`;
+
+                        productStrip.innerHTML = `
+                    <div class="text">
+                        <input type="text" value="${productName}" readonly>
+                        <input type="text" class="quantity" value="${quantity}" readonly>
+                        <input type="text" class="price" value="${productPrice}" readonly>
+                    </div>
+                `;
+
+                        receiptContainer.appendChild(productStrip);
+                    }
+                } else if (existingProductStrip) {
+                    existingProductStrip.remove();
+                }
+                recalculateTotalPrice();
+            }
+
+            function removeProductFromReceipt(productName) {
+                const receiptProduct = document.getElementById(`receipt-product-${CSS.escape(productName)}`);
+                const quantityInput = document.getElementById(`quantity-${productName}`);
+                const priceInput = document.getElementById(`price-${productName}`);
+
+                if (receiptProduct) {
+                    receiptProduct.remove();
+                }
+
+                quantityInput.value = 0;
+                priceInput.value = "0.00";
+
+                recalculateTotalPrice();
+            }
+
+            function recalculateTotalPrice() {
+                const receiptContainer = document.querySelector('.receipt');
+                const productPrices = receiptContainer.querySelectorAll('.price');
+                const totalPriceInput = document.getElementById('total-price');
+                const productQuantities = receiptContainer.querySelectorAll('.quantity');
+                const totalQuantityInput = document.getElementById('total-quantity');
+
+                let totalPrice = 0;
+                let totalQuantity = 0;
+
+                productPrices.forEach(price => {
+                    totalPrice += parseFloat(price.value) || 0;
+                });
+
+                productQuantities.forEach(quantity => {
+                    totalQuantity += parseInt(quantity.value, 10) || 0;
+                });
+
+                totalPriceInput.value = totalPrice.toFixed(2);
+                totalQuantityInput.value = totalQuantity;
+            }
+
+            function syncTotalValues() {
+                const totalPrice = document.getElementById('total-price').value;
+                const totalQuantity = document.getElementById('total-quantity').value;
+
+                document.getElementById('hidden-total-price').value = totalPrice;
+                document.getElementById('hidden-total-quantity').value = totalQuantity;
+
+                const receiptContainer = document.querySelector('.receipt');
+                const productStrips = receiptContainer.querySelectorAll('.product-strip');
+                const form = document.querySelector('form[action="/pay"]');
+
+                // Remove old quantity inputs
+                document.querySelectorAll('[name^="quantity-"]').forEach(input => input.remove());
+
+                productStrips.forEach(productStrip => {
+                    const productName = productStrip.querySelector('input[type="text"]').value;
+                    const quantity = productStrip.querySelector('.quantity').value;
+
+                    const hiddenInput = document.createElement('input');
+                    hiddenInput.type = 'hidden';
+                    hiddenInput.name = `quantity-${productName}`;
+                    hiddenInput.value = quantity;
+
+                    form.appendChild(hiddenInput);
+                });
+            }
+
+            function isCustomerSelected() {
+                const selectedCustomer = dropdown.value;
+                if (!selectedCustomer) {
+                    alert("Please Select Customer Before Selecting Products.");
+                    dropdown.focus();
+                    return false;
+                }
+                return true;
+            }
+
+            function safeUpdatePrice(productName, pricePerUnit) {
+                if (isCustomerSelected()) {
+                    updatePrice(productName, pricePerUnit);
+                }
+            }
+
+
+
+        </script>
+
+    </section>
+
+
+    <section id="footer" class="footer">
+
+        <div class="part">A billing system is a software solution designed to manage and streamline the invoicing
+            process for businesses. It automates tasks like bill generation, tracking payments, and maintaining
+            transaction records. Ideal for retail, e-commerce, and services, it ensures accuracy, reduces manual effort,
+            and enhances customer satisfaction through efficient billing and reporting.
+            <div>
+
+                <p>Copyright © 2025 Manish Sonawane, Paarsh Infotech Pvt. Ltd. All rights reserved.</p>
+
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
