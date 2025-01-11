@@ -1,0 +1,496 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+section {
+    display: flex;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    /* padding: 0.5rem;
+    margin: 0.5rem; */
+}
+
+.part {
+    width: 100%;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    background-color: #f5f5f5ee;
+}
+
+.part h2{
+    color: #3B1E54;
+}
+
+.output h1{
+    margin: 0.5rem ;
+    color: #3B1E54;
+}
+
+.output{
+    color: #3B1E54;
+}
+
+.form-input {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.form-input input {
+    height: 2.5rem;
+    width: auto;
+    font-size: 1rem;
+
+    border: 1px solid #D4BEE4;
+    outline: none;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.form-input select {
+    height: 2.86rem;
+    width: auto;
+    border: 1px solid #D4BEE4;
+    outline: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.form-input label {
+    padding: 0.4rem;
+    text-align: left;
+}
+
+.button-div {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+}
+
+.form-input button {
+    height: 3rem;
+    width: 20rem;
+    background-color: white;
+    color: #3B1E54;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.form-input button:hover {
+    background-color: #003eb1;
+    color: white;
+    background: #9B7EBD;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    max-height: calc(4 * 45px);
+    overflow-y: auto;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+th,
+td {
+    border: 1px 0 0 0 solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    color: #3B1E54;
+    background-color: #9B7EBD;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border: none;
+}
+
+tbody tr:hover {
+    background-color: #D4BEE4;
+    transition: background-color 0.3s ease;
+}
+
+.search form {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.search form label {
+    margin: 0 0.5rem;
+}
+
+.s-list {
+    font-size: 0.9rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    height: 2.75rem;
+    width: 10rem;
+    border: 1px solid #D4BEE4;
+    border-radius: 3px;
+    outline: none;
+}
+
+
+.search input {
+    height: 2.5rem;
+    width: 50%;
+    font-size: 1rem;
+
+    border: 1px solid #D4BEE4;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 0.5rem;
+    margin: 0rem 1rem;
+}
+
+.search button {
+    height: 2.9rem;
+    width: 15rem;
+    background-color: white;
+    color: #3B1E54;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.search button:hover {
+    background-color: #003eb1;
+    color: white;
+    background: #9B7EBD;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.bill-input {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 0 0.5rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.bill-input input {
+    height: 2.5rem;
+    width: auto;
+    font-size: 1rem;
+
+    border: 1px solid black;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 0.5rem;
+}
+
+.bill-input select {
+    height: 2.86rem;
+    width: auto;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.bill-input label {
+    padding: 0.4rem;
+    text-wrap: nowrap;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.bill-input button {
+    height: 3rem;
+    width: 10rem;
+    background-color: white;
+    color: #3B1E54;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.bill-input button:hover {
+    background-color: #003eb1;
+    color: white;
+    background: #9B7EBD;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.bill .table-container {
+    max-height: calc(6 * 52px);
+    overflow-y: auto;
+}
+
+.bill th{
+    width: 100px;
+    text-align: center;
+}
+
+.total-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* padding: 0.5rem 0; */
+    justify-content: end;
+}
+
+.total-price label {
+    font-weight: bold;
+    padding-left: 0.5rem;
+
+}
+
+.total-price input {
+    height: 1.4rem;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #D4BEE4;
+    border-radius: 4px;
+
+    outline: none;
+
+}
+
+button {
+    height: 3rem;
+    width: 10rem;
+    background-color: white;
+    color: #3B1E54;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 3px;
+    transition: 0.3s ease-in;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #003eb1;
+    color: white;
+    background: #3B1E54;
+    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        inset -50px -50px 50px rgba(255, 255, 255, 0.2),
+        inset 50px 50px 50px rgba(0, 0, 0, 0.1);
+}
+
+.table-container input[type="text"],
+.table-container input[type="number"] {
+    width: 100%;
+    height: 2.5rem;
+    padding: 5px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #D4BEE4;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.receipt {
+    /* border: 1px solid #D4BEE4;
+    padding: 0.2rem; */
+    /* margin: 0 0 0.5rem 0; */
+    border-radius: 3px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.receipt .product-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid #D4BEE4;
+    margin: 0.5rem 0;
+    background-color: #D4BEE4;
+}
+
+.receipt .product-strip .text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.receipt input[type='text'] {
+    font-size: 0.9rem;
+    align-items: center;
+    padding: 5px;
+    margin: 0.5rem;
+    width: 100%;
+    height: 1.9rem;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid grey;
+}
+
+.receipt button {
+    width: 5rem;
+    height: 2.3rem;
+    margin: 0 0.3rem 0 0.3rem;
+    color: rgb(255, 81, 81);
+}
+
+.receipt button:hover {
+    background-color: rgb(255, 32, 32);
+    color: white;
+}
+
+.receipt-headings {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.receipt-headings .text {
+    display: flex;
+    justify-content: space-around;
+}
+
+.receipt-headings .text span {
+    flex: 1;
+    text-align: center;
+}
+
+.product-strip {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-heading {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    background-color: #3B1E54;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #D4BEE4;
+}
+
+.product-heading .text {
+    display: flex;
+    gap: 10px;
+    /* Spacing between headings */
+    width: 85%;
+    /* Reserve width for headings */
+    justify-content: space-between;
+}
+
+.product-strip .text {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.product-strip .text input {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: #3B1E54;
+}
+
+.product-strip .delete button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+}
+
+.cname-div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.cname-div h3 {
+    text-wrap: nowrap;
+    margin: 1rem 0.5rem;
+}
+
+.d-list {
+    font-size: 0.9rem;
+    text-align: center;
+    align-items: center;
+
+    display: flex;
+    height: 2.5rem;
+    width: 20rem;
+
+    border: 1px solid #D4BEE4;
+    border-radius: 3px;
+    outline: none;
+}
+
+.bill-data{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.pay:hover {
+    background-color: #9B7EBD;
+}
+
+.footer p{
+    color: #3B1E54;
+    font-weight: bold;
+}
