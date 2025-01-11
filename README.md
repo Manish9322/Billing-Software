@@ -17,7 +17,7 @@ By using or contributing to this project, you agree to comply with the terms and
 ---
 
 ### License Information:
-This project is licensed under the MIT License. Please refer to the `LICENSE` file in this repository for detailed license information. The terms of the license govern the use, distribution, and modification of the software. If you have any questions regarding the licensing, please contact **manish.sonawane@example.com** (replace with your actual email).
+This project is licensed under the MIT License. Please refer to the `LICENSE` file in this repository for detailed license information. The terms of the license govern the use, distribution, and modification of the software. If you have any questions regarding the licensing, please contact **manishsonawane3010@gmail.com** (replace with your actual email).
 
 ---
 
